@@ -16,10 +16,12 @@
     "react": "^18.0.33",
     "react-dom": "^18.0.10",
     "react-query": "^3.39.3",
+    "tailwind-merge": "^3.3.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@tanstack/router-vite-plugin": "^1.20.5",
+    "@types/node": "^24.8.1",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^4.2.1",

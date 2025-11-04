@@ -1,13 +1,13 @@
 {
-  "name": "footybee-new",
+  "name": "splitwise-new",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "install-all": "npm i && cd backend && npm install && cd ../frontend && npm install",
     "dev": "cd ./frontend && npm run dev & cd ./backend && npm run dev",
-    "start": "cd ./backend && pm2 start npm --name \"footybee-backend\" -- start && cd ../frontend && pm2 start npm --name \"footybee-frontend\" -- start",
-    "stop": "pm2 stop footybee-backend && pm2 stop footybee-frontend && pm2 delete footybee-backend && pm2 delete footybee-frontend",
+    "start": "cd ./backend && pm2 start npm --name \"splitwise-backend\" -- start && cd ../frontend && pm2 start npm --name \"splitwise-frontend\" -- start",
+    "stop": "pm2 stop splitwise-backend && pm2 stop splitwise-frontend && pm2 delete splitwise-backend && pm2 delete splitwise-frontend",
     "restart": "git pull && npm run stop && npm run start"
   },
   "author": "",

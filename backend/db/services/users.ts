@@ -48,6 +48,12 @@ export const registerUserHandler: (server: FastifyInstance) => ServiceHandler =
       password: string;
     };
 
+    const user = await getUser(username);
+
+    if (user) {
+      reply.status(400).send({ error: "User already exists" });
+    }
+
     await insertUser({ username, password });
 
     const token = server.jwt.sign({ username });

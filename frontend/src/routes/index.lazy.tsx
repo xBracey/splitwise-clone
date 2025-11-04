@@ -1,9 +1,7 @@
-import { createLazyFileRoute, Navigate } from "@tanstack/react-router";
-import { useUserStore } from "../zustand/user";
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { Home } from "../pages/Home";
 
 const Index = () => {
-  const { token } = useUserStore();
   return <Home />;
 };
 

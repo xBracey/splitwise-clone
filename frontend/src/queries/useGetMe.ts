@@ -12,13 +12,14 @@ export const getMe = async (token: string) => {
     headers: {
       Authorization: `Bearer ${token}`,
     },
+    validateStatus: (status) => status === 200,
   });
 };
 
 export const useGetMe = () => {
   const { token } = useUserStore();
 
-  const { data } = useQuery(["getMe"], () => getMe(token));
+  const { data } = useQuery(["getMe", token], () => getMe(token));
 
   return data;
 };

@@ -1,13 +1,13 @@
 import { useMutation } from "react-query";
 import axios from "axios";
-import { apiRequest } from "./utils";
+import { apiRequest, ErrorResponse } from "./utils";
 
 interface LoginRequest {
   username: string;
   password: string;
 }
 
-interface LoginResponse {
+export interface LoginResponse {
   token: string;
 }
 
@@ -21,7 +21,11 @@ export const registerUser = async ({ username, password }: LoginRequest) => {
   });
 };
 
-export const useRegisterUser = () => {
-  const { mutate, isLoading, isError, data } = useMutation(registerUser);
+export const useRegisterUser = (
+  onSuccess: (resp: LoginResponse | ErrorResponse | null) => void
+) => {
+  const { mutate, isLoading, isError, data } = useMutation(registerUser, {
+    onSuccess,
+  });
   return { data, register: mutate, isLoading, isError };
 };
